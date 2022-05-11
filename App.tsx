@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import './style.css';
-import { Todos } from './Todos';
+import Todos from './Todos';
 
 export const App = () => {
   const [count, setCount] = useState(0);
@@ -10,9 +10,10 @@ export const App = () => {
   const increment = () => {
     setCount((c) => c + 1);
   };
-  const addTodo = () => {
+
+  const addTodo = useCallback(() => {
     setTodos((t) => [...t, 'New Todo']);
-  };
+  }, [todos]);
 
   return (
     <>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { memo } from 'react';
 
-export const Todos = ({ todos, addTodo }) => {
+const Todos = ({ todos, addTodo }) => {
   console.log('child render');
   return (
     <>
